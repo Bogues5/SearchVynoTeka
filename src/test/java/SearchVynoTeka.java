@@ -7,11 +7,21 @@ import java.time.Duration;
 public class SearchVynoTeka {
     @Test
     public void SearchTypeClick() {
+
+        System.setProperty("webdriver.chrome.driver", "C:\\kelias\\iki\\chromedriver.exe");
+
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        // Nustatome laukimo laika
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-        driver.get("https://Vynoteka.lt");
+        driver.get("https://www.vynoteka.lt");
+
+
+        // WebElement searchBox = driver.findElement(By.id("search"));
+        // searchBox.sendKeys("vynas");
+
+
+
 
 
 
