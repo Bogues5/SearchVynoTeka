@@ -8,8 +8,6 @@ public class SearchVynoTeka {
     @Test
     public void SearchTypeClick() {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\kelias\\iki\\chromedriver.exe");
-
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -24,19 +22,28 @@ public class SearchVynoTeka {
 
 
 
-
-
-
-
-
-
-
-
-
-
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
