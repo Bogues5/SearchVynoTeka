@@ -6,8 +6,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.sql.Driver;
 import java.time.Duration;
 
+import static java.awt.SystemColor.control;
 import static org.openqa.selenium.By.*;
 
 public class SearchVynoTeka {
@@ -22,27 +24,38 @@ public class SearchVynoTeka {
 
         driver.get("https://www.vynoteka.lt");
 
-        WebElement acceptBtn = driver.findElement(By.className("c-button--blue"));
+        WebElement acceptBtn = driver.findElement(className("c-button--blue"));
         acceptBtn.click();
-        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div[3]/div/div[1]/button")).click();
+        driver.findElement(xpath("/html/body/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div[3]/div/div[1]/button")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[4]/div[1]/div/div[2]/div[2]/div[2]/button/div"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(xpath("/html/body/div[4]/div[1]/div/div[2]/div[2]/div[2]/button/div"))).click();
 
-
-
-        driver.findElement(className("has-icon--left")).sendKeys("Degtinė");
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.className("search-form__content--desktop")));
+        wait.until(ExpectedConditions.elementToBeClickable(className("search-form__content--desktop")));
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(cssSelector("button[type='submit']")));
-        driver.findElement(cssSelector("button[type='submit']")).click();
-
-
-
-
+        driver.findElement(By.xpath("//*[@id=\"app__header\"]/div[2]/div/div/div[3]/div/div/div/form/div[1]/div/input")).sendKeys("alus");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"app__header\"]/div[2]/div/div/div[3]/div/div/div/form/div[2]/div/div[2]")));
+        driver.findElement(xpath("/html/body/div[2]/div[1]/header/div[2]/div/div/div[3]/div/div/div/form/div[1]/button")).click();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
